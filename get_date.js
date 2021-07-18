@@ -12,15 +12,33 @@ async function fetchIt( str ) {
 
 } 
 
-function tahnun_today(hdate) {
+function is_hol( today, hols ) {
+    if ( hols.length < 1 ) return false;
 
-    switch (hdate) {
-        case {day: '8', month: 'Av'}:
-        case {day: '9', month: 'Av'}:
-            return false;
-        default:
-            return true;
-    }
+    console.log( `is_hol() debug: Today: ${today}  Holiday: ${hols[0].date} `)
+
+    if ( hols.date === today ) return true;
+    return is_hol( today, hols.splice(1));
+}
+
+
+async function tahanun_today(hdate) {
+
+    const t = new Date();
+    const mnth = t.getMonth() + 1;
+    const d = t.getDate();
+    const today$ = `${t.getFullYear()}-${mnth.toString().padStart(2, '0')}-${d.toString().padStart(2, '0')}`;
+
+    const holAPI = `https://www.hebcal.com/hebcal?v=1&cfg=json&year=now&month=${mnth}&maj=on&min=on&nx=on&mf=on&mod=on`;
+
+    hebinfo = await fetchIt( holAPI );  // return json with all this month's observance dates, inter alia
+
+    hols = hebinfo.items;   //  Array of observance dates (json)
+
+    console.log(`tahanun_today() debug: today is ${today$}`);
+
+    return is_hol( today$, hols );
+
 }
 
 const gregDate = new Date();
@@ -40,7 +58,10 @@ if ( !caljson ) {
     // document.writeln( `Today's Hebrew date: ${caljson.hd} ${caljson.hm} ${caljson.hy} (${caljson.hebrew})`);
     document.getElementById('full__date').innerHTML = format_str;
 
-    tahnun_today( {day: dd, month: mm} );
+    document.getElementById('tahanun').innerHTML =
+        await tahanun_today( {day: dd, month: mm} )
+        ? 'Taḥanun is recited today'
+        : 'NO TA&#7717NUN TODAY'
 
     console.log('get_date.js script complete')
 }
