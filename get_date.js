@@ -1,7 +1,11 @@
 
 async function fetchIt( str ) {
     const res = await fetch( str );
-    const ret = await res.json();
+    if (res.ok ) {
+        const ret = await res.json();
+    } else {
+        console.error( `fetch() apparently failed: ${res.status}`)
+    }
     return ret;
 } 
 
