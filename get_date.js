@@ -1,5 +1,5 @@
 
-export async function fetchIt( str ) {
+async function fetchIt( str ) {
     const res = await fetch( str );
     const ret = await res.json();
     return ret;
