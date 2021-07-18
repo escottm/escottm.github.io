@@ -12,22 +12,31 @@ async function fetchIt( str ) {
 
 } 
 
-function is_hol( today, hols ) {
-    if ( hols.length < 1 ) return null;
+//  returns {holiday: true|false, hebrew: null|hebrew name of holiday}
 
-    console.log( `is_hol() debug: Today: ${today}  Holiday: ${hols[0].date} `)
+function holiday( today, hols ) {
+    if ( hols.length < 1 ) return {holiday: false, hebrew: null};
 
-    if ( hols[0].date === today ) return hols[0].hebrew;
-    return is_hol( today, hols.splice(1));
+    console.log( `is_hol() debug: Today: ${today}  Holiday: ${hols[0].date} ${hols[0].hebrew}`)
+
+    if ( hols[0].date === today ) 
+        return ({holiday: true, hebrew: hols[0].hebrew});
+    return holiday( today, hols.splice(1));
+}
+
+function shortdate () {
+    const t = new Date();
+    const mnth = t.getMonth() + 1;
+    const d = t.getDate();
+
+    return `${t.getFullYear()}-${mnth.toString().padStart(2, '0')}-${d.toString().padStart(2, '0')}`
 }
 
 
 async function tahanun_today(hdate) {
+    const today$ = shortdate();
 
-    const t = new Date();
-    const mnth = t.getMonth() + 1;
-    const d = t.getDate();
-    const today$ = `${t.getFullYear()}-${mnth.toString().padStart(2, '0')}-${d.toString().padStart(2, '0')}`;
+    const mnth = today$.slice(5,7); // extract the month from yyyy-mm-dd
 
     const holAPI = `https://www.hebcal.com/hebcal?v=1&cfg=json&year=now&month=${mnth}&maj=on&min=on&nx=on&mf=on&mod=on`;
 
@@ -37,7 +46,7 @@ async function tahanun_today(hdate) {
 
     console.log(`tahanun_today() debug: today is ${today$}`);
 
-    return is_hol( today$, hols );
+    return holiday( today$, hols ).holiday;
 
 }
 
@@ -58,13 +67,16 @@ if ( !caljson ) {
     // document.writeln( `Today's Hebrew date: ${caljson.hd} ${caljson.hm} ${caljson.hy} (${caljson.hebrew})`);
     document.getElementById('full__date').innerHTML = format_str;
 
-    const holiday_today = await tahanun_today( {day: dd, month: mm} );
+    const tahanunYN = await tahanun_today( {day: dd, month: mm} );
     document.getElementById('tahanun').innerHTML =
-        (holiday_today != null)
+        (tahanunYN)
         ? 'Taḥanun is recited today'
         : 'NO TA&#7716NUN TODAY'
 
-    document.getElementById('holiday').innerHTML = holiday_today;
+    document.getElementById('holiday').innerHTML = 
+        holiday()
+        ? `Today is ${holiday_today}`
+        : '';
 
     console.log('get_date.js script complete')
 }
