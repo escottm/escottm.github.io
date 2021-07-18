@@ -16,6 +16,13 @@
   <body>
     <div id=root>
         <div class="date">
+            <input id="full__date" type="text" readonly />
+            <label for="full__date">
+              Today's Hebrew Date Is: 
+            </label>
+            <input id="heb__date" type="hidden" />
+            <input id="heb__month" type="hidden" />
+            <input id="heb_year" type="hidden" />
             <script type="module" src="./get_date.js" >
             </script>
         </div>

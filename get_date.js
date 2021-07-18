@@ -3,7 +3,7 @@ async function fetchIt( str ) {
     const res = await fetch( str );
     if (res.ok ) {
         const ret = await res.json();
-        console.log( `Debug: in fetchIt(): return status ${res.status}, json "${JSON.stringify(ret)}"`);
+        console.log( `fetchIt(): return status ${res.status}, json "${JSON.stringify(ret)}"`);
         return ret;   
     
     }
@@ -25,7 +25,8 @@ const caljson = await fetchIt( hcal );
 if ( !caljson ) {
     console.error( 'fetchIt() returned null; keep debugging, buddy')
 } else {
-    console.log( `debug: caljson=="${JSON.stringify(caljson)}"`);
-    document.writeln( `Today's Hebrew date: ${caljson.hd} ${caljson.hm} ${caljson.hy} (${caljson.hebrew})`);
+    const format_str = `${caljson.hd} ${caljson.hm} ${caljson.hy} (${caljson.hebrew})`
+    // document.writeln( `Today's Hebrew date: ${caljson.hd} ${caljson.hm} ${caljson.hy} (${caljson.hebrew})`);
+    document.getElementById('full__date').textContent = format_str;
     console.log('script complete /escott')
 }
