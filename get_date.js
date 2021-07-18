@@ -4,7 +4,8 @@ async function fetchIt( str ) {
     if (res.ok ) {
         const ret = await res.json();
     } else {
-        console.error( `fetch() apparently failed: ${res.status}`)
+        console.error( `fetch() apparently failed: ${res.status}`);
+        return null;
     }
     console.log( `Debug: in fetchIt(): return status ${res.status}, json "${ret}"`)
     return ret;
@@ -19,6 +20,12 @@ const hcal = `https://www.hebcal.com/converter?cfg=json&gy=${yy}&gm=${mm}&gd=${d
 
 const caljson = fetchIt( hcal );
 
-console.log( `debug: caljson=="${JSON.stringify(caljson)}"`);
-document.writeln( `Today's Hebrew date: ${caljson.hd} ${caljson.hm} ${caljson.hy} (${caljson.hebrew})`);
-console.log('script complete /escott')
+if ( !caljson ) {
+    console.error( 'fetchIT() returned null; keep debugging, buddy')
+} else {
+    console.log( `debug: caljson=="${JSON.stringify(caljson)}"`);
+    document.writeln( `Today's Hebrew date: ${caljson.hd} ${caljson.hm} ${caljson.hy} (${caljson.hebrew})`);
+    console.log('script complete /escott')
+}
+
+export default fetchIt;
