@@ -20,10 +20,10 @@ const yy = gregDate.getFullYear().toString().padStart(2, '0');
 
 const hcal = `https://www.hebcal.com/converter?cfg=json&gy=${yy}&gm=${mm}&gd=${dd}&g2h=1`;
 
-const caljson = fetchIt( hcal );
+const caljson = await fetchIt( hcal );
 
 if ( !caljson ) {
-    console.error( 'fetchIT() returned null; keep debugging, buddy')
+    console.error( 'fetchIt() returned null; keep debugging, buddy')
 } else {
     console.log( `debug: caljson=="${JSON.stringify(caljson)}"`);
     document.writeln( `Today's Hebrew date: ${caljson.hd} ${caljson.hm} ${caljson.hy} (${caljson.hebrew})`);
