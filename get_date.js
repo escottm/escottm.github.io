@@ -6,6 +6,7 @@ async function fetchIt( str ) {
     } else {
         console.error( `fetch() apparently failed: ${res.status}`)
     }
+    console.log( `Debug: in fetchIt(): return status ${res.status}, json "${ret}"`)
     return ret;
 } 
 
@@ -16,7 +17,7 @@ const yy = gregDate.getFullYear().toString().padStart(2, '0');
 
 const hcal = `https://www.hebcal.com/converter?cfg=json&gy=${yy}&gm=${mm}&gd=${dd}&g2h=1`;
 
-const caljson = await fetchIt( hcal );
+const caljson = fetchIt( hcal );
 
 console.log( `debug: caljson=="${JSON.stringify(caljson)}"`);
 document.writeln( `Today's Hebrew date: ${caljson.hd} ${caljson.hm} ${caljson.hy} (${caljson.hebrew})`);
