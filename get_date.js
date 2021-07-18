@@ -13,8 +13,9 @@ async function fetchIt( str ) {
 } 
 
 const gregDate = new Date();
-const dd = gregDate.getDay().toString().padStart(2, '0');
-const mm = gregDate.getMonth().toString().padStart(2, '0');
+const dd = gregDate.getDate().toString().padStart(2, '0');
+const mmm = gregDate.getMonth()+1
+const mm = mmm.toString().padStart(2, '0');
 const yy = gregDate.getFullYear().toString().padStart(2, '0');
 
 const hcal = `https://www.hebcal.com/converter?cfg=json&gy=${yy}&gm=${mm}&gd=${dd}&g2h=1`;
