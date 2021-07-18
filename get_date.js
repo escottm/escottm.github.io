@@ -28,5 +28,3 @@ if ( !caljson ) {
     document.writeln( `Today's Hebrew date: ${caljson.hd} ${caljson.hm} ${caljson.hy} (${caljson.hebrew})`);
     console.log('script complete /escott')
 }
-
-export default fetchIt;
