@@ -28,5 +28,9 @@ if ( !caljson ) {
     const format_str = `${caljson.hd} ${caljson.hm} ${caljson.hy} (${caljson.hebrew})`
     // document.writeln( `Today's Hebrew date: ${caljson.hd} ${caljson.hm} ${caljson.hy} (${caljson.hebrew})`);
     document.getElementById('full__date').innerHTML = format_str;
-    console.log('script complete /escott')
+    document.getElementById('heb__date').innerHTML = caljson.hd;
+    document.getElementById('heb__month').innerHTML = caljson.hm;
+    document.getElementById('heb__year').innerHTML = caljson.hy;
+    
+    console.log('get_date.js script complete')
 }
