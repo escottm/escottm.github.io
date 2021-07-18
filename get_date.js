@@ -13,11 +13,11 @@ async function fetchIt( str ) {
 } 
 
 function is_hol( today, hols ) {
-    if ( hols.length < 1 ) return false;
+    if ( hols.length < 1 ) return null;
 
     console.log( `is_hol() debug: Today: ${today}  Holiday: ${hols[0].date} `)
 
-    if ( hols.date === today ) return true;
+    if ( hols[0].date === today ) return hols[0].hebrew;
     return is_hol( today, hols.splice(1));
 }
 
@@ -58,10 +58,13 @@ if ( !caljson ) {
     // document.writeln( `Today's Hebrew date: ${caljson.hd} ${caljson.hm} ${caljson.hy} (${caljson.hebrew})`);
     document.getElementById('full__date').innerHTML = format_str;
 
+    const holiday_today = await tahanun_today( {day: dd, month: mm} );
     document.getElementById('tahanun').innerHTML =
-        await tahanun_today( {day: dd, month: mm} )
+        (holiday_today != null)
         ? 'Taḥanun is recited today'
-        : 'NO TA&#7717NUN TODAY'
+        : 'NO TA&#7716NUN TODAY'
+
+    document.getElementById('holiday').innerHTML = holiday_today;
 
     console.log('get_date.js script complete')
 }
