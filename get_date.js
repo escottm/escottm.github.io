@@ -3,12 +3,13 @@ async function fetchIt( str ) {
     const res = await fetch( str );
     if (res.ok ) {
         const ret = await res.json();
-    } else {
-        console.error( `fetch() apparently failed: ${res.status}`);
-        return null;
+        console.log( `Debug: in fetchIt(): return status ${res.status}, json "${ret}"`)
+        return ret;
+    
     }
-    console.log( `Debug: in fetchIt(): return status ${res.status}, json "${ret}"`)
-    return ret;
+    console.error( `fetch() apparently failed: ${res.status}`);
+    return null;
+
 } 
 
 const gregDate = new Date();
