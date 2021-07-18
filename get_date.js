@@ -31,9 +31,9 @@ async function tahanun_today(hdate) {
 
     const holAPI = `https://www.hebcal.com/hebcal?v=1&cfg=json&year=now&month=${mnth}&maj=on&min=on&nx=on&mf=on&mod=on`;
 
-    hebinfo = await fetchIt( holAPI );  // return json with all this month's observance dates, inter alia
+    const hebinfo = await fetchIt( holAPI );  // return json with all this month's observance dates, inter alia
 
-    hols = hebinfo.items;   //  Array of observance dates (json)
+    const hols = hebinfo.items;   //  Array of observance dates (json)
 
     console.log(`tahanun_today() debug: today is ${today$}`);
 
