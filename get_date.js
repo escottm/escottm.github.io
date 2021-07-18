@@ -12,6 +12,17 @@ async function fetchIt( str ) {
 
 } 
 
+function tahnun_today(hdate) {
+
+    switch (hdate) {
+        case {day: '8', month: 'Av'}:
+        case {day: '9', month: 'Av'}:
+            return false;
+        default:
+            return true;
+    }
+}
+
 const gregDate = new Date();
 const dd = gregDate.getDate().toString().padStart(2, '0');
 const mmm = gregDate.getMonth()+1
@@ -28,9 +39,8 @@ if ( !caljson ) {
     const format_str = `${caljson.hd} ${caljson.hm} ${caljson.hy} (${caljson.hebrew})`
     // document.writeln( `Today's Hebrew date: ${caljson.hd} ${caljson.hm} ${caljson.hy} (${caljson.hebrew})`);
     document.getElementById('full__date').innerHTML = format_str;
-    document.getElementById('heb__date').innerHTML = caljson.hd;
-    document.getElementById('heb__month').innerHTML = caljson.hm;
-    document.getElementById('heb__year').innerHTML = caljson.hy;
-    
+
+    tahnun_today( {day: dd, month: mm} );
+
     console.log('get_date.js script complete')
 }
