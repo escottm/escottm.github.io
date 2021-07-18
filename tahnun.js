@@ -15,7 +15,7 @@ function tahnun_today() {
     }
 }
 
-document.getElementById('tahnum').innerHTML = 
+document.getElementById('tahnun').innerHTML = 
     tahnun_today()
     ? 'We recite ta&#7717nun today'
     : 'NO TA&#7716NUN TODAY';
