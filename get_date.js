@@ -3,7 +3,7 @@ async function fetchIt( str ) {
     const res = await fetch( str );
     const ret = await res.json();
     return ret;
-}
+} 
 
 const gregDate = new Date();
 const dd = gregDate.getDay().toString().padStart(2, '0');
