@@ -3,8 +3,8 @@ async function fetchIt( str ) {
     const res = await fetch( str );
     if (res.ok ) {
         const ret = await res.json();
-        console.log( `Debug: in fetchIt(): return status ${res.status}, json "${await res.text()}"`); 
-        return ret;
+        console.log( `Debug: in fetchIt(): return status ${res.status}, json "${JSON.stringify(ret)}"`);
+        return ret;   
     
     }
     console.error( `fetch() apparently failed: ${res.status}`);
