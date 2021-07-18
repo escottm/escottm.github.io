@@ -14,5 +14,6 @@ const hcal = `https://www.hebcal.com/converter?cfg=json&gy=${yy}&gm=${mm}&gd=${d
 
 const caljson = fetchIt( hcal );
 
+console.log( `debug: caljson=="${JSON.stringify(caljson)}`);
 document.writeln( `Today's Hebrew date: ${caljson.hd} ${caljson.hm} ${caljson.hy} (${caljson.hebrew})`);
 console.log('script complete /escott')
