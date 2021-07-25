@@ -1,6 +1,6 @@
 
 const d = new Date();
-const API = `http://localhost:8080?date=${d.getMonth()+1}-${d.getDate()}-${d.getFullYear()}`;
+const API = `http://localhost:8080?date=${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
 
 const tahanun = fetch( API )
     .then( t => distTahanunInfo(t))
