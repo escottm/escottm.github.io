@@ -7,6 +7,7 @@ const tahanun = fetch( API )
     .catch( err => console.error(`ocegal: fetch() failed with "${err}"`));
 
 function distTahanunInfo( t ) {
+    console.log(t);
     try {
         document.getElementById('full__date').textContent =`${t.hm}-${t.hd}-${t.hy}`;
     }
