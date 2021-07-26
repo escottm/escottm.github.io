@@ -1,0 +1,40 @@
+/* Main part: 3 columns */
+
+.headline {
+    display: flex;
+    flex-flow: column;
+    font: normal 24px 'Arial, Helvetica, sans-serif';
+    width:fit-content;
+}
+
+.date { 
+    display: flex;
+    flex-flow: row;
+}
+
+.date#date__title {
+    background-color: lightcyan;
+    align-content: center;
+}
+
+.date#full__date {
+    background-color: darkblue;
+    color: lightcyan;
+    font: bold 24px Arial, Helvetica, sans-serif';
+}
+
+.holiday {
+    background-color: lightpink;
+}
+
+.t__info {
+    background-color: lightgreen
+}
+
+.t__info.recite {
+    color: green;
+}
+
+.t__info.omit {
+    color: red;
+}

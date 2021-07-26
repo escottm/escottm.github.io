@@ -21,11 +21,13 @@ function distTahanunInfo( t ) {
         document.getElementById('full__date').textContent =`${t.hd} ${t.hm} ${t.hy}`;
         const minha = found( t.services, 'minha');
         const reciteAtMinha = (t.tahanun && minha) || ( !t.tahanun && !minha );
-        const tElemID = minha ? 'tahanun' : 'no__tahanun';
+        const tElemClass = minha ? 'recite' : 'omit';
         const tElemTxt = minha  
                         ? "We recite taḥanun today as usual"
                         : "We do not recite taḥanun this afternoon";
-        document.getElementById( tElemID ).textContent = tElemTxt;
+        const tahanunElem = document.getElementById( 'tahanun' );
+        tahanunElem.classList.add( tElemClass); // allow for different styling for recite/omit messages
+        tahanunElem.textContent = tElemTxt;
     }
     catch (err) {
         console.error(`ocegal: unexpected error: "${err}"`)

@@ -11,29 +11,28 @@
       name="description"
       content="OC Egal Minyan Calendar"
     />
-  <title>OCEgal</title>
+    <link href="ocegal.css" rel="stylesheet" type="text/css">
+    <title>OCEgal</title>
   </head>
   <body>
     <div id=root>
-        <div class="date">
-            <label for='full__date'>Today's Hebrew date is:  </label>
-            <span id="full__date">
+      <div id='headline'>
+          <div class="date">
+              <span id="date__title">Today's Hebrew Date</span>
+              <span id="full__date"></span> <!-- placeholder -->
+          </div>
+          <div class="holiday">
+            <span id='holiday'>
             </span>
+          </div>
+          <div class="t__info">
+            <span id="tahanun"></span>
+          </div>
         </div>
-        <div class="holiday">
-          <span id='holiday'>
-          </span>
-        </div>
-        <div class="info">
-          <label for="tahanun">Ta&#7717;anun: </label>
-          <span id="tahanun" class="tahanun"></span>
-          <span id="no__tahanun" class="no__tahanun"></span>
-        </div>
-        <script type="module" src="/ocegal.js" >
-        </script>
     </div>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    
+    <script type="module" src="/ocegal.js" >
+    </script>
   </body>
 </html>
    
