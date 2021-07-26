@@ -2,14 +2,16 @@
 
 .headline {
     display: flex;
-    flex-flow: row;
+    flex-direction: row;
+    flex-basis: 33%;
     font: normal 24px 'Arial, Helvetica, sans-serif';
     width:fit-content;
 }
 
 .date { 
     display: flex;
-    flex-flow: column;
+    flex-basis: 50%;
+    flex-direction: column;
 }
 
 .date#date__title {
@@ -31,10 +33,10 @@
     background-color: lightgreen
 }
 
-.t__info.recite {
+.recite#tahanun {
     color: green;
 }
 
-.t__info.omit {
+.omit#tahanun {
     color: red;
 }
