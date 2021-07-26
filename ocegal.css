@@ -2,14 +2,14 @@
 
 .headline {
     display: flex;
-    flex-flow: column;
+    flex-flow: row;
     font: normal 24px 'Arial, Helvetica, sans-serif';
     width:fit-content;
 }
 
 .date { 
     display: flex;
-    flex-flow: row;
+    flex-flow: column;
 }
 
 .date#date__title {
@@ -20,7 +20,7 @@
 .date#full__date {
     background-color: darkblue;
     color: lightcyan;
-    font: bold 24px Arial, Helvetica, sans-serif';
+    font-weight: bold;
 }
 
 .holiday {
