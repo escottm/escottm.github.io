@@ -6,6 +6,7 @@
     flex-basis: 33%;
     font: normal 24px 'Arial, Helvetica, sans-serif';
     width:fit-content;
+    justify-content: center;
 }
 
 .date { 
@@ -14,15 +15,16 @@
     flex-direction: column;
 }
 
-.date#date__title {
+#date__title {
     background-color: lightcyan;
-    align-content: center;
+    text-align: center;
 }
 
-.date#full__date {
+#full__date {
     background-color: darkblue;
     color: lightcyan;
     font-weight: bold;
+    text-align: center;
 }
 
 .holiday {
