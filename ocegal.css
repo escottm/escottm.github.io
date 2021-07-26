@@ -3,10 +3,8 @@
 .headline {
     display: flex;
     flex-direction: row;
-    flex-basis: 33%;
     font: normal 24px 'Arial, Helvetica, sans-serif';
-    width:fit-content;
-    /* justify-content: center; */
+    justify-content: center;
 }
 
 @media screen and (max-width:600px) {
@@ -15,7 +13,7 @@
 
 .date { 
     display: flex;
-    flex-basis: 50%;
+    flex-basis: 33%;
     flex-direction: column;
     align-items: center;
 }
@@ -23,6 +21,7 @@
 #date__title {
     background-color: lightcyan;
     text-align: center;
+    flex-basis: 50%;
 }
 
 #full__date {
@@ -30,6 +29,7 @@
     color: lightcyan;
     font-weight: bold;
     text-align: center;
+    flex-basis: 50%;
 }
 
 .holiday {
