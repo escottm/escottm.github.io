@@ -1,5 +1,5 @@
 
-const qDate = window.location.search.replace(/\??/, "$'");
+const qDate = window.location.search.replace(/\??/, "");
 
 console.log( `ocegal: /?${qDate}`);
 const d = (qDate.length == 0)
