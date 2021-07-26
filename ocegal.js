@@ -23,8 +23,8 @@ function distTahanunInfo( t ) {
         const reciteAtMinha = (t.tahanun && minha) || ( !t.tahanun && !minha );
         const tElemClass = minha ? 'recite' : 'omit';
         const tElemTxt = minha  
-                        ? "We recite taḥanun today as usual"
-                        : "We do not recite taḥanun this afternoon";
+                        ? "We <b>recite</b> taḥanun"
+                        : "We <b>omit</b> taḥanun";
         const tahanunElem = document.getElementById( 'tahanun' );
         tahanunElem.classList.add( tElemClass); // allow for different styling for recite/omit messages
         tahanunElem.textContent = tElemTxt;
