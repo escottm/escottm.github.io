@@ -1,5 +1,11 @@
 
-const d = new Date();
+const qDate = window.location.search.replace(/\??/, "$'");
+
+console.log( `ocegal: /?${qDate}`);
+const d = (qDate.length == 0)
+        ? new Date()
+        : new Date( qDate );
+
 const API = `http://localhost:8080?date=${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
 
 const tahanun = fetch( API )
@@ -17,11 +23,12 @@ function distTahanunInfo( t ) {
         const reciteAtMinha = (t.tahanun && minha) || ( !t.tahanun && !minha );
         const tElemID = minha ? 'tahanun' : 'no__tahanun';
         const tElemTxt = minha  
-                        ? "We recite ta&#7717anun today as usual"
-                        : "We do not recite ta&#7717anun this afternoon";
+                        ? "We recite taḥanun today as usual"
+                        : "We do not recite taḥanun this afternoon";
         document.getElementById( tElemID ).textContent = tElemTxt;
     }
     catch (err) {
         console.error(`ocegal: unexpected error: "${err}"`)
     };
+    
 }
