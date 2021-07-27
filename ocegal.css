@@ -8,13 +8,13 @@
 }
 
 #welcome {
-    background-color: darkblue;
-    color: lightskyblue;
+    background-color: #666666;
+    color: white;
 }
 
 #salutation {
     font-weight: bold;
-    
+
 }
 
 .headline {
@@ -69,4 +69,8 @@
     color: red;
     font: normal 18px Arial, Helvetica, sans-serif;
     flex-basis: 50%;
+}
+
+#statics {
+    font: italic 18px Arial, Helvetica, sans-serif;
 }
