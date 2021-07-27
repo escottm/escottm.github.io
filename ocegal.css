@@ -1,5 +1,22 @@
 /* Main part: 3 columns */
 
+#page {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#welcome {
+    background-color: darkblue;
+    color: lightskyblue;
+}
+
+#salutation {
+    font-weight: bold;
+    
+}
+
 .headline {
     display: flex;
     flex-direction: column;
@@ -38,23 +55,18 @@
     text-align: center;
 }
 
-.tahanun__header {
-    background-color: darkblue;
-    color: lightcyan;
-    font-weight: bold;
-    flex-basis: 33%;
-}
+
 
 [class*="recite__"]
 {
     color: inherit;
     font: normal 18px Arial, Helvetica, sans-serif;
-    flex-basis: 33%;
+    flex-basis: 50%;
 }
 
 [class*="omit__"]
 {
     color: red;
     font: normal 18px Arial, Helvetica, sans-serif;
-    flex-basis: 33%;
+    flex-basis: 50%;
 }
