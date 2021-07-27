@@ -75,7 +75,7 @@ a#homelink {
     flex-basis: 50%;
 }
 
-#statics {
+#times, #pagenums {
     background-color: lightskyblue;
     text-align: center;
     font: italic 18px Arial, Helvetica, sans-serif;
