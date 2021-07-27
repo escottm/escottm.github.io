@@ -87,3 +87,27 @@ a#homelink {
     margin-left: auto;
     margin-right: auto;
 }
+
+#kaddish {
+    display: flex;
+    flex-direction: column;
+}
+
+#kaddish__text {
+    display: flex;
+    flex-direction: row;
+}
+
+#kaddish__aramaic, #kaddish__translit {
+    flex-basis: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#kaddish__aramaic {
+    font: bold 18px 'Lucide Grande', sans-serif;
+}
+
+#kaddish__translit {
+    font: normal 18px Arial, Helvetica, sans-serif;
+}
