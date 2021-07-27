@@ -34,6 +34,9 @@ function distTahanunInfo( t ) {
     try {
         document.getElementById('full__date').textContent =`${t.hd} ${t.hm} ${t.hy}`;
 
+        if ( t.title ) {
+            document.getElementById('holiday').textContent = t.title;
+        }
         const minha = isRecited( t.tahanun, 'minha', t.services);
         const shaharit = isRecited( t.tahanun, 'shaharit', t.services);
         

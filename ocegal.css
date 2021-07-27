@@ -2,23 +2,19 @@
 
 .headline {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     font: normal 24px 'Arial, Helvetica, sans-serif';
     /* justify-content: center; */
     text-align: center;
     background-color: lightskyblue;
-    margin: 5px;
-}
-
-@media screen and (max-width:700px) {
-    .headline {flex-direction: row}
+    gap: 15px;
 }
 
 .date { 
     display: flex;
     flex-basis: 33%;
     flex-direction: column;
-    align-items: center;
+    align-items:stretch;
 }
 
 #date__title {
@@ -26,8 +22,8 @@
 }
 
 #full__date {
-    background-color: darkblue;
-    color: lightcyan;
+    background-color: inherit;
+    color: inherit;
     font-weight: bold;
     flex-basis: 50%;
 }
@@ -37,11 +33,9 @@
 }
 
 .t__info {
-    /* background-color: lightcyan; */
     display: flex;
     flex-direction: column;
     text-align: center;
-    /* align-items: center; */
 }
 
 .tahanun__header {
