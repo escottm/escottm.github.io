@@ -7,10 +7,11 @@
     /* justify-content: center; */
     text-align: center;
     background-color: lightskyblue;
+    margin: 5px;
 }
 
-@media screen and (max-width:600px) {
-    .headline {flex-direction: row};
+@media screen and (max-width:700px) {
+    .headline {flex-direction: row}
 }
 
 .date { 
@@ -50,13 +51,13 @@
     flex-basis: 33%;
 }
 
-.recite__minha#tahanun__minha, .recite_shaharit#tahanun__shaharit
+[class*="recite__"]
 {
     color: green;
     flex-basis: 33%;
 }
-.omit__minha#tahanun__minha, .omit_shaharit#tahanun__shaharit
 
+[class*="omit__"]
 {
     color: red;
     flex-basis: 33%;

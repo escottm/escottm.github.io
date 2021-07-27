@@ -17,6 +17,7 @@ const found = ( ar, text ) => ( (ar !== undefined) && (ar.findIndex( s => s === 
 
 function isRecited( tahanun, service, namedServices ) {
     const listed = found( namedServices, service );
+    console.log( `isRecited(${service}: listed=${listed} ` );
     return ( (tahanun && listed) || (!tahanun && !listed));
 }
 
