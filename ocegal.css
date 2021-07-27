@@ -53,12 +53,14 @@
 
 [class*="recite__"]
 {
-    color: green;
+    color: inherit;
+    font: normal 18px Arial, Helvetica, sans-serif;
     flex-basis: 33%;
 }
 
 [class*="omit__"]
 {
     color: red;
+    font: normal 18px Arial, Helvetica, sans-serif;
     flex-basis: 33%;
 }

@@ -17,7 +17,7 @@ const found = ( ar, text ) => ( (ar !== undefined) && (ar.findIndex( s => s === 
 
 function isRecited( tahanun, service, namedServices ) {
     const listed = found( namedServices, service );
-    console.log( `isRecited(${service}: listed=${listed} ` );
+    console.log( `isRecited(${service}): listed=${listed} ` );
     return ( (tahanun && listed) || (!tahanun && !listed));
 }
 
@@ -40,8 +40,8 @@ function distTahanunInfo( t ) {
         const minhaElem = document.getElementById( 'tahanun__minha' );
         const shaharitElem = document.getElementById( 'tahanun__shaharit' );
 
-        minhaElem.classList.add( reciteOmitClass( 'minha', minha )); // allow for different styling for recite/omit messages
-        shaharitElem.classList.add( reciteOmitClass( 'shaharit', shaharit )); // allow for different styling for recite/omit messages
+        minhaElem.classList.add( reciteOmitClass( 'minha', minha )); // allow for different styling for recite/omit & shacharit/mincha
+        shaharitElem.classList.add( reciteOmitClass( 'shaharit', shaharit )); // ditto
 
         minhaElem.textContent = 'Minḥa: ' + reciteOmit( minha );
         shaharitElem.textContent = 'Shaḥarit: ' + reciteOmit( shaharit );
