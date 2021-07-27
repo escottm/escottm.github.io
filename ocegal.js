@@ -44,8 +44,8 @@ function distTahanunInfo( t ) {
         minhaElem.classList.add( reciteOmitClass( 'minha', minha )); // allow for different styling for recite/omit messages
         shaharitElem.classList.add( reciteOmitClass( 'shaharit', shaharit )); // allow for different styling for recite/omit messages
 
-        minhaElem.textContent = reciteOmit( minha );
-        shaharitElem.textContent = reciteOmit( shaharit );
+        minhaElem.textContent = 'Minḥa: ' + reciteOmit( minha );
+        shaharitElem.textContent = 'Shaḥarit: ' + reciteOmit( shaharit );
 
     }
     catch (err) {

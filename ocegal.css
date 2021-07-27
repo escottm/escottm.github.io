@@ -6,6 +6,7 @@
     font: normal 24px 'Arial, Helvetica, sans-serif';
     justify-content: center;
     text-align: center;
+    background-color: lightskyblue;
 }
 
 @media screen and (max-width:600px) {
@@ -42,12 +43,20 @@
     align-items: center;
 }
 
+.tahanun__header {
+    background-color: darkblue;
+    color: lightcyan;
+    font-weight: bold;
+    flex-basis: 33%
+}
 .recite__minha#tahanun__minha, .recite_shaharit#tahanun__shaharit
 {
     color: green;
+    flex-basis: 33%;
 }
 .omit__minha#tahanun__minha, .omit_shaharit#tahanun__shaharit
 
 {
     color: red;
+    flex-basis: 33%;
 }
