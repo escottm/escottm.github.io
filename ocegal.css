@@ -80,3 +80,9 @@ a#homelink {
     text-align: center;
     font: italic 18px Arial, Helvetica, sans-serif;
 }
+
+#pagetbl {
+    width: 66%;
+    align-self: center;
+    border: 1px;
+}
