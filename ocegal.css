@@ -101,7 +101,7 @@ a#homelink {
     background-color: lightskyblue;
 }
 
-#kaddish_intro {
+#kaddish__intro {
     font: var(--lighter-font);
     font-style: italic;
     text-align: center;
