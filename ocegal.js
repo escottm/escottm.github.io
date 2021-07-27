@@ -15,19 +15,38 @@ const tahanun = fetch( API )
 
 const found = ( ar, text ) => ( (ar !== undefined) && (ar.findIndex( s => s === text ) != -1));
 
+function isRecited( tahanun, service, namedServices ) {
+    const listed = found( namedServices, service );
+    return ( (tahanun && listed) || (!tahanun && !listed));
+}
+
+const reciteOmit = ( recite ) => 
+    recite
+    ? "Taḥanun is recited"
+    : "Taḥanun is omitted";
+
+const reciteOmitClass = ( service, recited ) =>
+    service + '__' + recited
+    ? "recite"
+    : "omit";
+
 function distTahanunInfo( t ) {
     console.log(t);
     try {
         document.getElementById('full__date').textContent =`${t.hd} ${t.hm} ${t.hy}`;
-        const minha = found( t.services, 'minha');
-        const reciteAtMinha = (t.tahanun && minha) || ( !t.tahanun && !minha );
-        const tElemClass = minha ? 'recite' : 'omit';
-        const tElemTxt = minha  
-                        ? "We <b>recite</b> taḥanun"
-                        : "We <b>omit</b> taḥanun";
-        const tahanunElem = document.getElementById( 'tahanun' );
-        tahanunElem.classList.add( tElemClass); // allow for different styling for recite/omit messages
-        tahanunElem.textContent = tElemTxt;
+
+        const minha = isRecited( t.tahanun, 'minha', t.services);
+        const shaharit = isRecited( t.tahanun, 'shaharit', t.services);
+        
+        const minhaElem = document.getElementById( 'tahanun__minha' );
+        const shaharitElem = document.getElementById( 'tahanun__shaharit' );
+
+        minhaElem.classList.add( reciteOmitClass( 'minha', minha )); // allow for different styling for recite/omit messages
+        shaharitElem.classList.add( reciteOmitClass( 'shaharit', shaharit )); // allow for different styling for recite/omit messages
+
+        minhaElem.textContent = reciteOmit( minha );
+        shaharitElem.textContent = reciteOmit( shaharit );
+
     }
     catch (err) {
         console.error(`ocegal: unexpected error: "${err}"`)

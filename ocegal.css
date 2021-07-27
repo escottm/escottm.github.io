@@ -5,6 +5,7 @@
     flex-direction: row;
     font: normal 24px 'Arial, Helvetica, sans-serif';
     justify-content: center;
+    text-align: center;
 }
 
 @media screen and (max-width:600px) {
@@ -19,8 +20,6 @@
 }
 
 #date__title {
-    background-color: lightcyan;
-    text-align: center;
     flex-basis: 50%;
 }
 
@@ -28,23 +27,27 @@
     background-color: darkblue;
     color: lightcyan;
     font-weight: bold;
-    text-align: center;
     flex-basis: 50%;
 }
 
 .holiday {
-    background-color: lightcyan;
+    color: inherit;
 }
 
 .t__info {
-    background-color: lightcyan;
+    /* background-color: lightcyan; */
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    align-items: center;
 }
 
-.recite#tahanun {
+.recite__minha#tahanun__minha, .recite_shaharit#tahanun__shaharit
+{
     color: green;
 }
+.omit__minha#tahanun__minha, .omit_shaharit#tahanun__shaharit
 
-.omit#tahanun {
+{
     color: red;
 }
