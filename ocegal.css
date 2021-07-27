@@ -10,11 +10,15 @@
 #welcome {
     background-color: #666666;
     color: white;
+    text-align: center;
 }
 
 #salutation {
     font: bold 24px Arial, Helvetica, sans-serif;
+}
 
+a#salutation {
+    color: white;
 }
 
 .headline {
@@ -72,5 +76,7 @@
 }
 
 #statics {
+    background-color: lightskyblue;
+    text-align: center;
     font: italic 18px Arial, Helvetica, sans-serif;
 }
