@@ -26,9 +26,7 @@ const reciteOmit = ( recite ) =>
     : "Taḥanun is omitted";
 
 const reciteOmitClass = ( service, recited ) =>
-    service + '__' + recited
-    ? "recite"
-    : "omit";
+    (recited ? "recite" : "omit") + `__${service}`;
 
 function distTahanunInfo( t ) {
     console.log(t);

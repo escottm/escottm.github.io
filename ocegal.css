@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: row;
     font: normal 24px 'Arial, Helvetica, sans-serif';
-    justify-content: center;
+    /* justify-content: center; */
     text-align: center;
     background-color: lightskyblue;
 }
@@ -40,15 +40,16 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .tahanun__header {
     background-color: darkblue;
     color: lightcyan;
     font-weight: bold;
-    flex-basis: 33%
+    flex-basis: 33%;
 }
+
 .recite__minha#tahanun__minha, .recite_shaharit#tahanun__shaharit
 {
     color: green;
