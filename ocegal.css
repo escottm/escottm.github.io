@@ -4,6 +4,8 @@
     --lighter-font: normal 24px Arial, Helvetica, sans-serif;
     --smaller-font: normal 18px Arial, Helvetica, sans-serif;
     --hebrew-font: bold 20px 'Lucide Grande', sans-serif;
+    --default-bg: gradient(90deg, ivory, lightskyblue);
+    --default-shadow: 5 5 gray;
 }
 
 #page {
@@ -14,7 +16,8 @@
 }
 
 #welcome {
-    background-color: #666666;
+    background: var(--default-bg);
+    box-shadow: var(--default-shadow);
     color: white;
     text-align: center;
 }
@@ -33,7 +36,8 @@ a.homelink {
     font: var(--lighter-font);
     /* justify-content: center; */
     text-align: center;
-    background-color: lightskyblue;
+    background: var(--default-bg);
+    box-shadow: var(--default-shadow);
     gap: 15px;
 }
 
@@ -49,7 +53,6 @@ a.homelink {
 }
 
 #full__date {
-    background-color: inherit;
     color: inherit;
     font-weight: bold;
     flex-basis: 50%;
@@ -82,12 +85,16 @@ a.homelink {
 }
 
 #times, #pagenums {
-    background-color: lightskyblue;
+    background: var(--default-bg);
+    box-shadow: var(--default-shadow);
     text-align: center;
     font: var(--lighter-font);
     font-style: italic;
 }
 
+p.exposition {
+    max-width: 66%
+}
 #pagetbl {
     width: 66%;
     border: 1px;
@@ -98,7 +105,8 @@ a.homelink {
 #kaddish {
     display: flex;
     flex-direction: column;
-    background-color: lightskyblue;
+    background: var(--default-bg);
+    box-shadow: var(--default-shadow);
 }
 
 #kaddish__intro {
