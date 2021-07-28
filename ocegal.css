@@ -21,8 +21,9 @@
     box-shadow: var(--default-shadow);
     gap: 15px;
     border: var(--default-border);
+    width: 90%;
+    margin: auto;
 }
-
 
 #welcome {
     color: white;
