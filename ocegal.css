@@ -4,7 +4,7 @@
     --lighter-font: normal 24px Arial, Helvetica, sans-serif;
     --smaller-font: normal 18px Arial, Helvetica, sans-serif;
     --hebrew-font: bold 20px 'Lucide Grande', sans-serif;
-    --default-bg: linear-gradient(90deg, ivory, lightskyblue);
+    --default-bg: linear-gradient(90deg, ivory, skyblue);
     --default-shadow: 5 5 gray;
     --default-border: 1px solid black;
 }
@@ -29,6 +29,7 @@
     text-align: center;
     background: #555;
     color: white;
+    width: 80%;
 }
 
 #salutation {
