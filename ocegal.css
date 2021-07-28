@@ -6,28 +6,7 @@
     --hebrew-font: bold 20px 'Lucide Grande', sans-serif;
     --default-bg: linear-gradient(90deg, ivory, lightskyblue);
     --default-shadow: 5 5 gray;
-    --default-border: 1px solid black;
-}
-
-#page {
-    background-color: blue;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-#welcome {
-    background: #666666;
-    color: white;
-    text-align: center;
-}
-
-#salutation {
-    font: var(--default-font);
-}
-
-a.homelink {
-    color: white;
+    --default-border: 0px solid black;
 }
 
 .main {
@@ -36,6 +15,24 @@ a.homelink {
     box-shadow: var(--default-shadow);
     gap: 15px;
     border: var(--default-border);
+}
+
+#page {
+    background: linear-gradient(black, #555555);
+    display: flex;
+    flex-direction: column;
+}
+
+#welcome {
+    color: white;
+}
+
+#salutation {
+    font: var(--default-font);
+}
+
+a.homelink {
+    color: white;
 }
 
 .headline {
@@ -72,8 +69,6 @@ a.homelink {
     flex-direction: column;
     text-align: center;
 }
-
-
 
 [class*="recite__"]
 {
@@ -132,7 +127,6 @@ p.exposition {
     margin-left: auto;
     margin-right: auto;
 }
-
 
 #kaddish__aramaic {
     font: var(--hebrew-font);
