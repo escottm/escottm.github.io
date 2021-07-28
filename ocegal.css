@@ -23,7 +23,7 @@
     font: var(--default-font);
 }
 
-a#homelink {
+a.homelink {
     color: white;
 }
 
@@ -105,6 +105,9 @@ a#homelink {
     font: var(--lighter-font);
     font-style: italic;
     text-align: center;
+    max-width: 66%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 #kaddish__text {
