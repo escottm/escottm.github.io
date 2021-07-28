@@ -6,7 +6,7 @@
     --hebrew-font: bold 20px 'Lucide Grande', sans-serif;
     --default-bg: linear-gradient(90deg, ivory, lightskyblue);
     --default-shadow: 5 5 gray;
-    --default-border: 0px solid black;
+    --default-border: 1px solid black;
 }
 
 #page {
