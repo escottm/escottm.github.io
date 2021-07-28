@@ -13,13 +13,13 @@
     background: linear-gradient(black, #555555);
     display: flex;
     flex-direction: column;
+    gap: 15px;
 }
 
 .main {
     text-align: center;
     background: var(--default-bg);
     box-shadow: var(--default-shadow);
-    gap: 15px;
     border: var(--default-border);
     width: 90%;
     margin: auto;
