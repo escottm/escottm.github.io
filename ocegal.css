@@ -9,6 +9,12 @@
     --default-border: 0px solid black;
 }
 
+#page {
+    background: linear-gradient(black, #555555);
+    display: flex;
+    flex-direction: column;
+}
+
 .main {
     text-align: center;
     background: var(--default-bg);
@@ -17,11 +23,6 @@
     border: var(--default-border);
 }
 
-#page {
-    background: linear-gradient(black, #555555);
-    display: flex;
-    flex-direction: column;
-}
 
 #welcome {
     color: white;
