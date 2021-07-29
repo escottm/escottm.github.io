@@ -101,6 +101,7 @@ a.homelink {
 }
 
 .exposition {
+    font: var(--lighter-font);
     max-width: 66%;
     text-align: center;
     margin-left: auto;
