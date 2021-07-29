@@ -6,7 +6,7 @@ const d = (qDate.length == 0)
         ? new Date()
         : new Date( qDate );
 
-const API = `http://tahanun.herokuapp.com/?date=${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
+const API = `https://tahanun.herokuapp.com/?date=${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
 
 const tahanun = fetch( API )
     .then( res => res.json() )  // I think I get it...
