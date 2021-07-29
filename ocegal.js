@@ -5,8 +5,8 @@ console.log( `ocegal: /?${qDate}`);
 const d = (qDate.length == 0)
         ? new Date()
         : new Date( qDate );
-
-const API = `https://tahanun.herokuapp.com/?date=${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
+console.log( `ocegal: looking up info for ${d.getUTCFullYear()}-${d.getUTCMonth()+1}-${d.getUTCDate()}`)
+const API = `https://tahanun.herokuapp.com/?date=${d.getUTCFullYear()}-${d.getUTCMonth()+1}-${d.getUTCDate()}`;
 
 const tahanun = fetch( API )
     .then( res => res.json() )  // I think I get it...
