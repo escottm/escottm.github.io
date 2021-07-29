@@ -154,3 +154,15 @@ a.homelink {
 .anchor__link {
     font-size: large;
 }
+
+#red {
+    color: red;
+}
+
+#blue {
+    color: blue;
+}
+
+.toc {
+    text-align: right;
+}
