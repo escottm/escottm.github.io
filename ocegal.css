@@ -100,7 +100,7 @@ a.homelink {
     font-style: italic;
 }
 
-.exposition {
+.exposition p.exposition {
     max-width: 66%;
     text-align: center;
     margin-left: auto;
