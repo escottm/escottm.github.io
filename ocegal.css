@@ -150,3 +150,7 @@ a.homelink {
 #kaddish__translit {
     font: var(--lighter-font);
 }
+
+.anchor__link {
+    font-size: large;
+}
