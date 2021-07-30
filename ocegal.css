@@ -2,7 +2,8 @@
 :root {
     --default-font: bold 24px Arial, Helvetica, sans-serif;
     --lighter-font: normal 24px Arial, Helvetica, sans-serif;
-    --smaller-font: normal 18px Arial, Helvetica, sans-serif;
+    --normal-font: normal 18px Arial, Helvetica, sans-serif;
+    --large-font: normal large Arial, Helvetica, sans-serif;
     --hebrew-font: bold 20px 'Lucide Grande', sans-serif;
     --default-bg: linear-gradient(90deg, ivory, skyblue);
     --default-shadow: 5 5 gray;
@@ -115,10 +116,11 @@ a.homelink {
     }
 }
 
-#pagetbl {
-    border: 1px;
-    margin-left: auto;
-    margin-right: auto;
+.toc__tbl {
+    font: var(--large-font);
+    max-width: 66%;
+    margin: auto;
+    padding: 15px;
 }
 
 #kaddish {
@@ -167,6 +169,10 @@ a.homelink {
     text-align: right;
 }
 
+.col1 {
+    text-align: left;
+}
+
 th, td {
     border-bottom: 1px solid gray;
 }
@@ -176,5 +182,5 @@ tr {
 }
 
 tr:hover {
-    background-color: gray;
+    background-color: lightgray;
 }
