@@ -33,7 +33,7 @@
 
 #welcome {
     text-align: center;
-    background: linear-gradient(180deg, black, #555);
+    background: linear-gradient(0deg, black, #555);
     color: white;
     width: 100%;
     margin: auto auto;
