@@ -5,6 +5,11 @@ console.log( `ocegal: /?${qDate}`);
 const d = (qDate.length == 0)
         ? new Date()
         : new Date( qDate );
+const mon = ('Jan', 'Feb', 'Mar',
+             'Apr', 'May', 'Jun',
+             'Jul', 'Aug', 'Sep',
+             'Oct', 'Nov', 'Dec')[d.getUTCMonth()];
+const today = `${mon} ${d.getUTCDate()}, ${d.getUTCFullYear()}`;
 console.log( `ocegal: looking up info for ${d.getUTCFullYear()}-${d.getUTCMonth()+1}-${d.getUTCDate()}`)
 const API = `https://tahanun.herokuapp.com/?date=${d.getUTCFullYear()}-${d.getUTCMonth()+1}-${d.getUTCDate()}`;
 
@@ -32,8 +37,9 @@ const reciteOmitClass = ( service, recited ) =>
 function distTahanunInfo( t ) {
     console.log(t);
     try {
-        document.getElementById('full__date').textContent =`${t.hd} ${t.hm} ${t.hy}`;
-
+        document.getElementById('heb__date').textContent =`${t.hd} ${t.hm} ${t.hy}`;
+        document.getElementById('sec__date').textContent = today;
+        
         if ( t.title ) {
             document.getElementById('holiday').textContent = t.title;
         }
