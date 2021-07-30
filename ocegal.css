@@ -168,9 +168,6 @@ a.homelink {
     color: blue;
 }
 
-#buy_a_siddur {
-    font: var(--large-font);
-}
 
 .toc {
     text-align: right;
@@ -190,4 +187,12 @@ tr {
 
 tr:hover {
     background-color: lightgray;
+}
+
+#buy_a_siddur {
+    font: var(--large-font);
+}
+
+#siddur_info {
+    font: var(--default-font);
 }
