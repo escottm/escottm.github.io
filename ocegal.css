@@ -166,3 +166,15 @@ a.homelink {
 .toc {
     text-align: right;
 }
+
+th, td {
+    border-bottom: 1px solid gray;
+}
+
+tr {
+    font-size: large;
+}
+
+tr:hover {
+    background-color: gray;
+}
