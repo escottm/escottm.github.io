@@ -168,6 +168,10 @@ a.homelink {
     color: blue;
 }
 
+#buy_a_siddur {
+    font: var(--large-font);
+}
+
 .toc {
     text-align: right;
 }
