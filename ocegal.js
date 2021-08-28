@@ -1,4 +1,4 @@
-import * as dayjs from "./dayjs-1.10.6/dayjs.min.js.js"
+import * as dayjs from "./dayjs-1.10.6/dayjs.min.js"
 // const CPF = require( );
 import * as CPF from './dayjs-1.10.6/plugin/plugin/customParseFormat' ;
 dayjs.extend(CPF);  // enable custom parse format extension to dayjs
