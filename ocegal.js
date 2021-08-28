@@ -1,8 +1,8 @@
 import * as dayjs from "./dayjs-1.10.6/dayjs.min.js"
 // const CPF = require( );
 import * as CPF from './dayjs-1.10.6/plugin/customParseFormat.js' ;
-dayjs.extend(CPF);  // enable custom parse format extension to dayjs
-
+// dayjs.extend(CPF);  // enable custom parse format extension to dayjs
+dayjs.extend(window.dayjs_plugin_customParseFormat);
 const qDate = window.location.search.replace(/\??/, "");
 
 console.log( `ocegal: /?${qDate}`);
