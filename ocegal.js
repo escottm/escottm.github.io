@@ -1,17 +1,21 @@
+import dayjs from 'dayjs'
+import CPF from 'dayjs/plugin/customParseFormat'
+
+dayjs.extend(CPF);  // enable custom parse format extension to dayjs
 
 const qDate = window.location.search.replace(/\??/, "");
 
 console.log( `ocegal: /?${qDate}`);
-const d = (qDate.length == 0)
-        ? new Date()
-        : new Date( qDate );
-const mon = ['Jan', 'Feb', 'Mar',
-             'Apr', 'May', 'Jun',
-             'Jul', 'Aug', 'Sep',
-             'Oct', 'Nov', 'Dec'][d.getMonth()];
-const today = `${mon} ${d.getDate()}, ${d.getFullYear()}`;
-console.log( `ocegal: looking up info for ${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`)
-const API = `https://tahanun.herokuapp.com/?date=${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
+const okDateFmt = ['YYYY-M-D', 'YYYY-MM-DD', 'MM-DD-YYYY'];
+const customDate = dayjs( qDate, okDateFmt, true ).isValid();
+const d = customDate 
+        ? dayjs( qDate, okDatefmt )
+        : dayjs();
+
+const ymd = d.format('YYYY-MM-DD');
+
+console.log( `ocegal: looking up info for ${ymd}`);
+const API = `https://tahanun.herokuapp.com/?date=${ymd}`;
 
 const tahanun = fetch( API )
     .then( res => res.json() )  // I think I get it...
