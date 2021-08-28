@@ -2,7 +2,7 @@ import * as dayjs from "./dayjs-1.10.6/dayjs.min.js";
 
 import * as customParseFormat from './dayjs-1.10.6/plugin/customParseFormat.js';
 
-extend(window.dayjs_plugin_customParseFormat);
+dayjs.extend(window.dayjs_plugin_customParseFormat);
 const qDate = window.location.search.replace(/\??/, "");
 
 console.log( `ocegal: /?${qDate}`);
