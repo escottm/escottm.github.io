@@ -1,5 +1,5 @@
 import dayjs from 'dayjs'
-import CPF from 'dayjs/plugin/customParseFormat'
+const CPF = require( 'dayjs/plugin/customParseFormat' );
 
 dayjs.extend(CPF);  // enable custom parse format extension to dayjs
 
