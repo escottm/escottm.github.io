@@ -1,6 +1,6 @@
-import * as dayjs from "./dayjs-1.10.6/dayjs.min.js";
+// import * as dayjs from "./dayjs-1.10.6/dayjs.min.js";
 
-import * as customParseFormat from './dayjs-1.10.6/plugin/customParseFormat.js';
+// import * as customParseFormat from './dayjs-1.10.6/plugin/customParseFormat.js';
 
 // dayjs.extend(customParseFormat);
 const qDate = window.location.search.replace(/\??/, "");
