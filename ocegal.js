@@ -43,7 +43,7 @@ function distTahanunInfo( t ) {
     try {
         document.getElementById('heb__date').textContent =`${t.hd} ${t.hm} ${t.hy}`;
         // document.getElementById('sec__date').textContent = today;
-        document.getElementById('sec__date').textContent = dayjs();
+        document.getElementById('sec__date').textContent = 'TESTING';
 
         if ( t.title ) {
             document.getElementById('holiday').textContent = t.title;
