@@ -44,6 +44,7 @@ function distTahanunInfo( t ) {
         document.getElementById('heb__date').textContent =`${t.hd} ${t.hm} ${t.hy}`;
         // document.getElementById('sec__date').textContent = today;
         document.getElementById('sec__date').textContent = `(using dayjs) ${dayjs()}`;
+        console.log(`ocegal: hello, today is ${dayjs()}`);  // should be local time but isn't...?
 
         if ( t.title ) {
             document.getElementById('holiday').textContent = t.title;
