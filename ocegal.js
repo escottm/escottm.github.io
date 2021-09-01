@@ -3,15 +3,15 @@ const qDate = window.location.search.replace(/\??/, "");
 
 console.log( `ocegal: /?${qDate}`);
 const checkDateFmt = ['YYYY-M-D', 'YYYY-MM-DD', 'MM-DD-YYYY'];
-const defaultDateFmt = 'YYYY-MM-DD';
+const formatYMD = 'YYYY-MM-DD';
 const customDate = dayjs( qDate, checkDateFmt, true ).isValid();
 
-const ymd = dayjs( customDate? qdate : undefined ).format(defaultDateFmt);
+const ymd = dayjs( customDate? qdate : undefined ).format(formatYMD);
 
 console.log( `ocegal: looking up info for ${ymd}`);
 const API = `https://tahanun.herokuapp.com/?date=${ymd}`;
 
-const tahanun = fetch( API )
+const tahanun = await fetch( API )
     .then( res => res.json() )  // I think I get it...
     .then( json => distTahanunInfo(json))
     .catch( err => console.error(`ocegal: fetch() failed with "${err}"`));
@@ -36,7 +36,6 @@ function distTahanunInfo( t ) {
     console.log(t);
     try {
         document.getElementById('heb__date').textContent =`${t.hd} ${t.hm} ${t.hy}`;
-        // document.getElementById('sec__date').textContent = today;
         document.getElementById('sec__date').textContent = `(using dayjs) ${dayjs().format('YYYY-MM-DD HH:mm')}`;
         console.log(`ocegal: hello, today is ${dayjs()}`);  // should be local time but isn't...?
 
