@@ -6,7 +6,7 @@ const checkDateFmt = ['YYYY-M-D', 'YYYY-MM-DD', 'MM-DD-YYYY'];
 const defaultDateFmt = 'YYYY-MM-DD';
 const customDate = dayjs( qDate, checkDateFmt, true ).isValid();
 
-const ymd = daysjs( customDate? qdate : undefined ).format(defaultDateFmt);
+const ymd = dayjs( customDate? qdate : undefined ).format(defaultDateFmt);
 
 console.log( `ocegal: looking up info for ${ymd}`);
 const API = `https://tahanun.herokuapp.com/?date=${ymd}`;
