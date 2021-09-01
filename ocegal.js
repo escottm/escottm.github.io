@@ -32,7 +32,7 @@ function distTahanunInfo( t ) {
     console.log(t);
     try {
         document.getElementById('heb__date').textContent =`${t.hd} ${t.hm} ${t.hy}`;
-        document.getElementById('sec__date').textContent = `${checkDate.format('ddd DD MMM YYYY')}`;
+        document.getElementById('sec__date').textContent = `${checkDate.format('ddd D MMM YYYY')}`;
 
         if ( t.title ) {        //  Anything named (including erev) gets a 'title'
             document.getElementById('holiday').textContent = t.title;
