@@ -1,22 +1,23 @@
 
-const qDate = window.location.search.replace(/\??/, "");
+const qDate = window.location.search.replace(/\??/, "");    // query string minus the leading '?'
 
-console.log( `ocegal: /?${qDate}`);
 const checkDateFmt = ['YYYY-M-D', 'YYYY-MM-DD', 'MM-DD-YYYY'];
 const formatYMD = 'YYYY-MM-DD';
-const customDate = dayjs( qDate, checkDateFmt, true ).isValid();
+const customDate = dayjs( qDate, checkDateFmt, true ).isValid();    // isValid() is a wonderful thing
 
-const ymd = dayjs( customDate? qdate : undefined ).format(formatYMD);
+const checkDate = dayjs( customDate? qdate : undefined );   //  dayjs object
+const ymd = checkDate.format(formatYMD);                    //  string representation of dayjs object as YYYY-MM-DD
 
 console.log( `ocegal: looking up info for ${ymd}`);
 const API = `https://tahanun.herokuapp.com/?date=${ymd}`;
 
 const tahanun = await fetch( API )
-    .then( res => res.json() )  // I think I get it...
-    .then( json => distTahanunInfo(json))
+    .then( res => res.json() )  // get me the json...
+    .then( json => distTahanunInfo(json))   //  fill the page with info from that json
     .catch( err => console.error(`ocegal: fetch() failed with "${err}"`));
 
-const found = ( ar, text ) => ( (ar !== undefined) && (ar.findIndex( s => s === text ) != -1));
+const found = ( ar, text ) => 
+    ( (ar !== undefined) && (ar.findIndex( s => s === text ) != -1));
 
 function isRecited( tahanun, service, namedServices ) {
     const listed = found( namedServices, service );
@@ -36,10 +37,9 @@ function distTahanunInfo( t ) {
     console.log(t);
     try {
         document.getElementById('heb__date').textContent =`${t.hd} ${t.hm} ${t.hy}`;
-        document.getElementById('sec__date').textContent = `(using dayjs) ${dayjs().format('YYYY-MM-DD HH:mm')}`;
-        console.log(`ocegal: hello, today is ${dayjs()}`);  // should be local time but isn't...?
+        document.getElementById('sec__date').textContent = `${checkDate.format('ddd DD MMM YYYY')}`;
 
-        if ( t.title ) {
+        if ( t.title ) {        //  Anything named (including erev) gets a 'title'
             document.getElementById('holiday').textContent = t.title;
         }
         const minha = isRecited( t.tahanun, 'minha', t.services);
