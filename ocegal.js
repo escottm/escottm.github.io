@@ -1,18 +1,12 @@
-// import * as dayjs from "./dayjs-1.10.6/dayjs.min.js";
 
-// import * as customParseFormat from './dayjs-1.10.6/plugin/customParseFormat.js';
-
-// dayjs.extend(customParseFormat);
 const qDate = window.location.search.replace(/\??/, "");
 
 console.log( `ocegal: /?${qDate}`);
-const okDateFmt = ['YYYY-M-D', 'YYYY-MM-DD', 'MM-DD-YYYY'];
-const customDate = dayjs( qDate, okDateFmt, true ).isValid();
-const d = customDate 
-        ? dayjs( qDate, okDatefmt )
-        : dayjs();
+const checkDateFmt = ['YYYY-M-D', 'YYYY-MM-DD', 'MM-DD-YYYY'];
+const defaultDateFmt = 'YYYY-MM-DD';
+const customDate = dayjs( qDate, checkDateFmt, true ).isValid();
 
-const ymd = d.format('YYYY-MM-DD');
+const ymd = daysjs( customDate? qdate : undefined ).format(defaultDateFmt);
 
 console.log( `ocegal: looking up info for ${ymd}`);
 const API = `https://tahanun.herokuapp.com/?date=${ymd}`;
