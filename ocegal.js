@@ -11,11 +11,6 @@ const ymd = checkDate.format(formatYMD);                    //  string represent
 console.log( `ocegal: looking up info for ${ymd}`);
 const API = `https://tahanun.herokuapp.com/?date=${ymd}`;
 
-const tahanun = await fetch( API )
-    .then( res => res.json() )  // get me the json...
-    .then( json => distTahanunInfo(json))   //  fill the page with info from that json
-    .catch( err => console.error(`ocegal: fetch() failed with "${err}"`));
-
 const found = ( ar, text ) => 
     ( (ar !== undefined) && (ar.findIndex( s => s === text ) != -1));
 
@@ -60,3 +55,10 @@ function distTahanunInfo( t ) {
     };
     
 }
+
+//  OK everything's set up, now call it
+
+const tahanun = fetch( API )
+    .then( res => res.json() )  // get me the json...
+    .then( json => distTahanunInfo(json))   //  fill the page with info from that json
+    .catch( err => console.error(`ocegal: fetch() failed with "${err}"`));
