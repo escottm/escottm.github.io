@@ -58,7 +58,7 @@ function distTahanunInfo( t ) {
 
 //  OK everything's set up, now call it
 
-const tahanun = fetch( API )
+fetch( API )
     .then( res => res.json() )  // get me the json...
     .then( json => distTahanunInfo(json))   //  fill the page with info from that json
     .catch( err => console.error(`ocegal: fetch() failed with "${err}"`));
